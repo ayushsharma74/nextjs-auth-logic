@@ -1,12 +1,16 @@
 "use client"
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Login() {
+    const router = useRouter()
 
     const onLogin = async () => {
         try {
             const res = await axios.post("/api/users/login",userPayload)
+            router.push("/profile")
+            
         } catch (error: any) {
             console.log(error);
         }

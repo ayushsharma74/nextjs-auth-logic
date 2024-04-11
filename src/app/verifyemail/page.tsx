@@ -1,12 +1,11 @@
 "use client"
-
 import axios from "axios"
-// import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
 export default function VerifyEmail() {
-    // const router = useRouter()
+    const router = useRouter()
     const [token,setToken] = useState("")
     const [verified,setVerified] = useState(false)
     const [error,setError] = useState(false)
@@ -15,6 +14,8 @@ export default function VerifyEmail() {
         try {
             await axios.post("/api/users/verifyemail",{token})
             setVerified(true)
+            router.push("/login")
+
         } catch (error:any) {
             setError(true)
             console.log(error);
