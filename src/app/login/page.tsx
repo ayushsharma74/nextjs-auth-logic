@@ -1,5 +1,6 @@
 "use client"
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -43,6 +44,9 @@ export default function Login() {
 
             <button onClick={onLogin} className="bg-white">
                 login
+            </button>
+            <button className="bg-yellow-600">
+                <Link href={"/signup"}>signup</Link>
             </button>
         </div>
     )
