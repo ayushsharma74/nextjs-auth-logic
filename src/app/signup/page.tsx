@@ -1,9 +1,15 @@
 "use client"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { toast } from "react-hot-toast"
+// import { toast } from "react-hot-toast"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { TailSpin } from "react-loader-spinner";
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast";
 
 export default function Signup() {
     const router = useRouter()
@@ -20,7 +26,6 @@ export default function Signup() {
             router.push("/login")
         } catch (error: any) {
             console.log("signup failed", error);
-            toast.error(error.message)
         }
     }
 
