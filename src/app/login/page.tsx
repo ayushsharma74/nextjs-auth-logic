@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Login() {
     const router = useRouter()
@@ -42,9 +43,9 @@ export default function Login() {
                 onChange={(e) => setUserPayload({ ...userPayload, email: e.target.value })}
                 type="email" />
 
-            <button onClick={onLogin} className="bg-white">
-                login
-            </button>
+            <Button onClick={onLogin}>
+                Login
+            </Button>
             <button className="bg-yellow-600">
                 <Link href={"/signup"}>signup</Link>
             </button>
