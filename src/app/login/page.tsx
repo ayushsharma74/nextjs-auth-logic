@@ -56,7 +56,7 @@ export default function Login() {
 
     return (
         <div className="flex flex-col h-screen items-center justify-center ">
-            <div className="bg-black py-10 px-12 flex gap-3 flex-col items-center border border-solid border-gray-900">
+            <div className="bg-black py-10 px-14 flex gap-3 flex-col items-center border border-solid border-gray-900">
                 <h1 className="font-bold text-4xl">Login</h1>
                 <div>
                     <Label htmlFor="username" className="font-semibold">Username</Label>
@@ -89,7 +89,7 @@ export default function Login() {
                     </Input>
                 </div>
 
-                <Button onClick={onLogin} className="mt-5">
+                <Button onClick={onLogin}>
                     {loading ? <TailSpin
                         visible={true}
                         height="25"
@@ -101,7 +101,7 @@ export default function Login() {
                         wrapperClass=""
                     /> : <span className="font-bold"> Sign In </span>}
                 </Button>
-                <Button>
+                <Button variant={"outline"}>
                     <Link href={"/signup"} className="font-bold">Sign Up</Link>
                 </Button>
 
